@@ -15,10 +15,15 @@ public class SaslClientCallbackHandler implements CallbackHandler {
         for (Callback cb : callbacks) {
             log.debug("Callback: {}", cb);
             switch (cb) {
-                case NameCallback nc -> nc.setName("username");
-                case PasswordCallback pc -> pc.setPassword("password".toCharArray());
-                case RealmCallback rc -> rc.setText("myServer");
-                default -> throw new UnsupportedCallbackException(cb);
+                case NameCallback nc:
+                    log.info("prompt: {}, name: {}, defaultName: {}", nc.getPrompt(), nc.getName(), nc.getDefaultName());
+                    nc.setName("username");
+                    break;
+                case PasswordCallback pc:
+                    log.info("prompt: {}, password: {}", pc.getPrompt(), pc.getPassword());
+                    pc.setPassword("password".toCharArray());
+                    break;
+                default: throw new UnsupportedCallbackException(cb);
             }
         }
     }

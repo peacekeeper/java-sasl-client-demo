@@ -14,7 +14,7 @@ public class SaslClientTest {
 
     private static final String[] MECHANISMS = new String[] { "CRAM-MD5" };
     private static final String AUTHORIZATION_ID = null;
-    private static final String PROTOCOL = "myproto";
+    private static final String PROTOCOL = "xmpp";
     private static final String SERVER_NAME = null;
     private static final Map<String, Object> PROPS = null;
 
