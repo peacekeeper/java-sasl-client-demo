@@ -1,4 +1,4 @@
-package demo.sasl.client.did;
+package sasl.xmpp.client.did;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -10,7 +10,7 @@ import javax.security.sasl.SaslException;
 import java.util.Collections;
 import java.util.Map;
 
-public class DidSaslClientTest {
+public class DidSaslClientDemo {
 
     private static final String[] MECHANISMS = new String[] { "DID-CHALLENGE" };
     private static final String AUTHORIZATION_ID = null;
@@ -18,10 +18,10 @@ public class DidSaslClientTest {
     private static final String SERVER_NAME = null;
     private static final Map<String, Object> PROPS = null;
 
-    private static final Logger log = LogManager.getLogger(DidSaslClientTest.class);
+    private static final Logger log = LogManager.getLogger(DidSaslClientDemo.class);
 
     public static void main(String[] args) throws Exception {
-        new DidSaslClientTest().run();
+        new DidSaslClientDemo().run();
     }
 
     public void run() throws SaslException {

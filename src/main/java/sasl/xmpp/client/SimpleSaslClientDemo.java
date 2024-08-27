@@ -1,4 +1,4 @@
-package demo.sasl.client;
+package sasl.xmpp.client;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -10,7 +10,7 @@ import javax.security.sasl.SaslException;
 import java.util.Collections;
 import java.util.Map;
 
-public class SaslClientTest {
+public class SimpleSaslClientDemo {
 
     private static final String[] MECHANISMS = new String[] { "CRAM-MD5" };
     private static final String AUTHORIZATION_ID = null;
@@ -18,10 +18,10 @@ public class SaslClientTest {
     private static final String SERVER_NAME = null;
     private static final Map<String, Object> PROPS = null;
 
-    private static final Logger log = LogManager.getLogger(SaslClientTest.class);
+    private static final Logger log = LogManager.getLogger(SimpleSaslClientDemo.class);
 
     public static void main(String[] args) throws Exception {
-        new SaslClientTest().run();
+        new SimpleSaslClientDemo().run();
     }
 
     public void run() throws SaslException {
@@ -37,14 +37,14 @@ public class SaslClientTest {
     }
 
     public static SaslClient createSaslClient() throws SaslException {
-        SaslClientCallbackHandler saslClientCallbackHandler = new SaslClientCallbackHandler();
+        SimpleSaslClientCallbackHandler simpleSaslClientCallbackHandler = new SimpleSaslClientCallbackHandler();
         javax.security.sasl.SaslClient saslClient = Sasl.createSaslClient(
                 MECHANISMS,
                 AUTHORIZATION_ID,
                 PROTOCOL,
                 SERVER_NAME,
                 PROPS,
-                saslClientCallbackHandler);
+                simpleSaslClientCallbackHandler);
         log.info("SASL client created: {}", saslClient);
         return saslClient;
     }
