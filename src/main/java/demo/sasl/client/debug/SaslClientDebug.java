@@ -1,4 +1,4 @@
-package sasl.xmpp.client.debug;
+package demo.sasl.client.debug;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;

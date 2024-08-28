@@ -21,7 +21,7 @@
                 <artifactId>exec-maven-plugin</artifactId>
                 <version>3.4.1</version>
                 <configuration>
-                    <mainClass>sasl.xmpp.client.SimpleSaslClientDemo</mainClass>
+                    <mainClass>demo.sasl.client.SimpleSaslClientDemo</mainClass>
                 </configuration>
             </plugin>
         </plugins>
