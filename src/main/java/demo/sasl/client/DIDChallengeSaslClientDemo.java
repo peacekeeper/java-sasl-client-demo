@@ -1,5 +1,10 @@
 package demo.sasl.client;
 
+import demo.sasl.client.integration.UserIntegrationWithDID;
+import demo.sasl.client.integration.UserIntegrationWithPassword;
+
+import javax.security.sasl.SaslClient;
+import javax.security.sasl.SaslException;
 import java.util.Map;
 
 public class DIDChallengeSaslClientDemo extends SaslClientDemo {
@@ -12,5 +17,10 @@ public class DIDChallengeSaslClientDemo extends SaslClientDemo {
 
     public DIDChallengeSaslClientDemo() {
         super(DEFAULT_MECHANISMS, DEFAULT_AUTHORIZATION_ID, DEFAULT_PROTOCOL, DEFAULT_SERVER_NAME, DEFAULT_PROPS);
+    }
+
+    public static void main(String[] args) throws SaslException {
+        SaslClient saslClient = new DIDChallengeSaslClientDemo().createSaslClient(new UserIntegrationWithDID());
+        System.out.print(saslClient);
     }
 }

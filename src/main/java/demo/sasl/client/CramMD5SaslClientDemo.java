@@ -1,5 +1,9 @@
 package demo.sasl.client;
 
+import demo.sasl.client.integration.UserIntegrationWithPassword;
+
+import javax.security.sasl.SaslClient;
+import javax.security.sasl.SaslException;
 import java.util.Map;
 
 public class CramMD5SaslClientDemo extends SaslClientDemo {
@@ -12,5 +16,10 @@ public class CramMD5SaslClientDemo extends SaslClientDemo {
 
     public CramMD5SaslClientDemo() {
         super(DEFAULT_MECHANISMS, DEFAULT_AUTHORIZATION_ID, DEFAULT_PROTOCOL, DEFAULT_SERVER_NAME, DEFAULT_PROPS);
+    }
+
+    public static void main(String[] args) throws SaslException {
+        SaslClient saslClient = new CramMD5SaslClientDemo().createSaslClient(new UserIntegrationWithPassword());
+        System.out.print(saslClient);
     }
 }
