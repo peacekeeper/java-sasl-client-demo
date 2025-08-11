@@ -7,6 +7,7 @@ import org.apache.logging.log4j.Logger;
 import javax.security.sasl.Sasl;
 import javax.security.sasl.SaslClient;
 import javax.security.sasl.SaslException;
+import java.util.Arrays;
 import java.util.Map;
 
 public abstract class SaslClientDemo {
@@ -36,6 +37,7 @@ public abstract class SaslClientDemo {
                 this.getServerName(),
                 this.getProps(),
                 new SaslClientCallbackHandler(userIntegration));
+        if (saslClient == null) throw new UnsupportedOperationException("SASL client mechanisms " + Arrays.asList(this.getMechanisms()) + " not supported");
         log.info("SASL client created: {}", saslClient);
         return saslClient;
     }

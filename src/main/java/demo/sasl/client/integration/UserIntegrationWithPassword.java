@@ -9,6 +9,7 @@ public class UserIntegrationWithPassword implements UserIntegration {
 
     private static final String USERNAME = "alice";
     private static final String PASSWORD = "s3cr3t";
+    private static final String REALM = "localhost";
 
     @Override
     public String getName() {
@@ -28,5 +29,12 @@ public class UserIntegrationWithPassword implements UserIntegration {
     public String getTextInput() {
         log.debug("getTextInput()");
         throw new UnsupportedOperationException("Not supported.");
+    }
+
+    @Override
+    public String getTextInputRealm() {
+        String textInput = REALM;
+        log.debug("getTextInputRealm() --> {}", textInput);
+        return textInput;
     }
 }

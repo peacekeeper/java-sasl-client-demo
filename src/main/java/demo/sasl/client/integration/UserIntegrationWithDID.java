@@ -8,6 +8,7 @@ public class UserIntegrationWithDID implements UserIntegration {
     private static final Logger log = LogManager.getLogger(UserIntegrationWithDID.class);
 
     private static final String DID = "did:key:z6MkeretqUG21CE9bwUNE6vfpnxRZxALZP2qfsApZDdbjcAC";
+    private static final String PRIVATEKEY = "did:key:z6MkeretqUG21CE9bwUNE6vfpnxRZxALZP2qfsApZDdbjcAC";
 
     @Override
     public String getName() {
@@ -25,6 +26,12 @@ public class UserIntegrationWithDID implements UserIntegration {
     @Override
     public String getTextInput() {
         log.debug("getTextInput()");
+        throw new UnsupportedOperationException("Not supported.");
+    }
+
+    @Override
+    public String getTextInputRealm() {
+        log.debug("getTextInputRealm()");
         throw new UnsupportedOperationException("Not supported.");
     }
 }
