@@ -7,8 +7,16 @@ public class UserIntegrationWithDID implements UserIntegration {
 
     private static final Logger log = LogManager.getLogger(UserIntegrationWithDID.class);
 
-    private static final String DID = "did:key:z6MkeretqUG21CE9bwUNE6vfpnxRZxALZP2qfsApZDdbjcAC";
-    private static final String PRIVATEKEY = "did:key:z6MkeretqUG21CE9bwUNE6vfpnxRZxALZP2qfsApZDdbjcAC";
+    private static final String DID = "did:key:z6MkfePUhxLV6cM54cgZ4bGmnEdTNm3WDf4arwh5kR3dH51D";
+    private static final String PRIVATEKEY = """
+            {
+                "kid": "did:key:z6MkfePUhxLV6cM54cgZ4bGmnEdTNm3WDf4arwh5kR3dH51D#z6MkfePUhxLV6cM54cgZ4bGmnEdTNm3WDf4arwh5kR3dH51D",
+                "kty": "OKP",
+                "crv": "Ed25519",
+                "x": "EbV6-hVmDiD3DKTUgsf2SjjnO7t0ttwMhStQ5JyCFhw",
+                "d": "vGjHIZzZxS3R4mo-V0I_S72ULXDqa2INqkAtuvqJUN8"
+            }
+            """;
 
     @Override
     public String getName() {
@@ -33,5 +41,12 @@ public class UserIntegrationWithDID implements UserIntegration {
     public String getTextInputRealm() {
         log.debug("getTextInputRealm()");
         throw new UnsupportedOperationException("Not supported.");
+    }
+
+    @Override
+    public String getTextInputJWK() {
+        String text = PRIVATEKEY;
+        log.debug("getTextInputJWK() --> {}", text);
+        return text;
     }
 }

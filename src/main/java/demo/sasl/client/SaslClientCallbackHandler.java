@@ -3,6 +3,7 @@ package demo.sasl.client;
 import demo.sasl.client.integration.UserIntegration;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import sasl.mechanism.did.callback.JWKCallback;
 
 import javax.security.auth.callback.*;
 import javax.security.sasl.RealmCallback;
@@ -33,6 +34,10 @@ public class SaslClientCallbackHandler implements CallbackHandler {
                 log.info(">C {} --- defaultText: {}, text: {}", rc.getPrompt(), rc.getDefaultText(), rc.getText());
                 rc.setText(this.getUserIntegration().getTextInputRealm());
                 log.info("C> {} --- defaultText: {}, text: {}", rc.getPrompt(), rc.getDefaultText(), rc.getText());
+            } else if (cb instanceof JWKCallback jwkc) {
+                log.info(">C {} --- defaultText: {}, text: {}", jwkc.getPrompt(), jwkc.getDefaultText(), jwkc.getText());
+                jwkc.setText(this.getUserIntegration().getTextInputJWK());
+                log.info("C> {} --- defaultText: {}, text: {}", jwkc.getPrompt(), jwkc.getDefaultText(), jwkc.getText());
             } else if (cb instanceof TextInputCallback tic) {
                 log.info(">C {} --- defaultText: {}, text: {}", tic.getPrompt(), tic.getDefaultText(), tic.getText());
                 tic.setText(this.getUserIntegration().getTextInput());

@@ -37,4 +37,10 @@ public class UserIntegrationWithPassword implements UserIntegration {
         log.debug("getTextInputRealm() --> {}", textInput);
         return textInput;
     }
+
+    @Override
+    public String getTextInputJWK() {
+        log.debug("getTextInput()");
+        throw new UnsupportedOperationException("Not supported.");
+    }
 }

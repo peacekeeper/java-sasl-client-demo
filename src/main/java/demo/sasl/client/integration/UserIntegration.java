@@ -6,4 +6,5 @@ public interface UserIntegration {
     String getPassword();
     String getTextInput();
     String getTextInputRealm();
+    String getTextInputJWK();
 }
