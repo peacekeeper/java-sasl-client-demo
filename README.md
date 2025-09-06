@@ -14,8 +14,8 @@ on the client side. It uses the Java SASL API and shows the use of two SASL auth
 In both cases, an implementation of a callback handler is also provided, to simulate the interaction between SASL and
 a host protocol:
 
-- [SimpleSaslClientCallbackHandler.java](https://github.com/peacekeeper/java-sasl-client-demo/blob/main/src/main/java/sasl/xmpp/client/SimpleSaslClientCallbackHandler.java)
-- [DidSaslClientCallbackHandler.java](https://github.com/peacekeeper/java-sasl-client-demo/blob/main/src/main/java/sasl/xmpp/client/did/DidSaslClientCallbackHandler.java)
+- [SaslClientCallbackHandler.java](https://github.com/peacekeeper/java-sasl-client-demo/blob/main/src/main/java/demo/sasl/client/SaslClientCallbackHandler.java)
+- [demo.sasl.client.integration](https://github.com/peacekeeper/java-sasl-client-demo/tree/main/src/main/java/demo/sasl/client/integration)
 
 This component is used as the client side in the SASL local "Hello World" demonstration,
 see https://github.com/peacekeeper/java-sasl-local-demo.
