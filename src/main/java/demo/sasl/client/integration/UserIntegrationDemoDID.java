@@ -3,9 +3,9 @@ package demo.sasl.client.integration;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public class UserIntegrationWithDID implements UserIntegration {
+public class UserIntegrationDemoDID implements UserIntegration {
 
-    private static final Logger log = LogManager.getLogger(UserIntegrationWithDID.class);
+    private static final Logger log = LogManager.getLogger(UserIntegrationDemoDID.class);
 
     private static final String DID = "did%3Akey%3Az6MkfePUhxLV6cM54cgZ4bGmnEdTNm3WDf4arwh5kR3dH51D";
     private static final String PRIVATEKEY = """

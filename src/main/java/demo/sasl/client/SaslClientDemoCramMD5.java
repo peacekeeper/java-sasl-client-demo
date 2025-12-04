@@ -1,6 +1,6 @@
 package demo.sasl.client;
 
-import demo.sasl.client.integration.UserIntegrationWithPassword;
+import demo.sasl.client.integration.UserIntegrationDemoUsername;
 
 import javax.security.sasl.SaslClient;
 import javax.security.sasl.SaslException;
@@ -19,7 +19,7 @@ public class SaslClientDemoCramMD5 extends SaslClientDemo {
     }
 
     public static void main(String[] args) throws SaslException {
-        SaslClient saslClient = new SaslClientDemoCramMD5().createSaslClient(new UserIntegrationWithPassword());
+        SaslClient saslClient = new SaslClientDemoCramMD5().createSaslClient(new UserIntegrationDemoUsername());
         System.out.print(saslClient);
     }
 }

@@ -1,6 +1,6 @@
 package demo.sasl.client;
 
-import demo.sasl.client.integration.UserIntegrationWithDID;
+import demo.sasl.client.integration.UserIntegrationDemoDID;
 
 import javax.security.sasl.SaslClient;
 import javax.security.sasl.SaslException;
@@ -19,7 +19,7 @@ public class SaslClientDemoDIDChallenge extends SaslClientDemo {
     }
 
     public static void main(String[] args) throws SaslException {
-        SaslClient saslClient = new SaslClientDemoDIDChallenge().createSaslClient(new UserIntegrationWithDID());
+        SaslClient saslClient = new SaslClientDemoDIDChallenge().createSaslClient(new UserIntegrationDemoDID());
         System.out.print(saslClient);
     }
 }

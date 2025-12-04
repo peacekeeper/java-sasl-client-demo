@@ -3,9 +3,9 @@ package demo.sasl.client.integration;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public class UserIntegrationWithPassword implements UserIntegration {
+public class UserIntegrationDemoUsername implements UserIntegration {
 
-    private static final Logger log = LogManager.getLogger(UserIntegrationWithPassword.class);
+    private static final Logger log = LogManager.getLogger(UserIntegrationDemoUsername.class);
 
     private static final String USERNAME = "alice";
     private static final String PASSWORD = "s3cr3t";
