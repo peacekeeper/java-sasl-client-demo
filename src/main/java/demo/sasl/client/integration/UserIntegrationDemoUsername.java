@@ -8,7 +8,7 @@ public class UserIntegrationDemoUsername implements UserIntegration {
     private static final Logger log = LogManager.getLogger(UserIntegrationDemoUsername.class);
 
     private static final String USERNAME = "alice";
-    private static final String PASSWORD = "s3cr3t";
+    private static final String PASSWORD = "alicepass";
     private static final String REALM = "localhost";
 
     @Override
