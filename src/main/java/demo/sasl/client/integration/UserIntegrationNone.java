@@ -36,4 +36,10 @@ public class UserIntegrationNone implements UserIntegration {
         log.debug("getTextInputJWK()");
         throw new UnsupportedOperationException("Not supported.");
     }
+
+    @Override
+    public String getTextInputVCS() {
+        log.debug("getTextInputVCS()");
+        throw new UnsupportedOperationException("Not supported.");
+    }
 }

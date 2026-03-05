@@ -7,4 +7,5 @@ public interface UserIntegration {
     String getTextInput();
     String getTextInputRealm();
     String getTextInputJWK();
+    String getTextInputVCS();
 }

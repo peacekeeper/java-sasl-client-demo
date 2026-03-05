@@ -40,7 +40,13 @@ public class UserIntegrationDemoUsername implements UserIntegration {
 
     @Override
     public String getTextInputJWK() {
-        log.debug("getTextInput()");
+        log.debug("getTextInputJWK()");
+        throw new UnsupportedOperationException("Not supported.");
+    }
+
+    @Override
+    public String getTextInputVCS() {
+        log.debug("getTextInputVCS()");
         throw new UnsupportedOperationException("Not supported.");
     }
 }

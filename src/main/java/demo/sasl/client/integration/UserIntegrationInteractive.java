@@ -52,8 +52,15 @@ public class UserIntegrationInteractive implements UserIntegration {
 
     @Override
     public String getTextInputJWK() {
-        String extInputJWK = readLine("getTextInputJWK");
-        log.debug("getTextInputJWK() --> {}", extInputJWK);
-        return extInputJWK;
+        String textInputJWK = readLine("getTextInputJWK");
+        log.debug("getTextInputJWK() --> {}", textInputJWK);
+        return textInputJWK;
+    }
+
+    @Override
+    public String getTextInputVCS() {
+        String textInputVCS = readLine("getTextInputVCS");
+        log.debug("getTextInputVCS() --> {}", textInputVCS);
+        return textInputVCS;
     }
 }
